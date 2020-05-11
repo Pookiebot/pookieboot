@@ -1,0 +1,39 @@
+{
+  
+  "ownerID": "212238091455299585",
+  
+  "easy": [
+  "mot 1",
+  "mot 2",
+  "mot 3"
+  ],
+  
+  "moyen": [
+  "mot 4",
+  "mot 5",
+  "mot 6",
+  "mot 7"
+  ],
+  
+  "difficile": [
+  "mot 8",
+  "mot 9",
+  "mot 10",
+  "mot 11" 
+  ],
+  
+  "night": [
+  "mot 12",
+  "mot 13",
+  "mot 14",
+  "mot 15"
+  ],
+  
+  "mythe": [
+  "mot 16",
+  "mot 17",
+  "mot 18",
+  "mot 19"
+  ]
+  
+}

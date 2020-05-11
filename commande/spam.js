@@ -1,11 +1,12 @@
 const Discord = require("discord.js");
 const { RichEmbed } = require("discord.js");
+const config = require("../storage/config.json")
 
 module.exports.run = async (bot, message, args) =>{
 console.log("test")
   message.delete();
   const zbub = message.mentions.members.first()
-  if(message.author.id !== "212238091455299585") return message.channel.send("tu n'a pas accès a cette commande").then(m => m.delete(5000))
+  if(message.author.id !== config.owner) return message.channel.send("tu n'a pas accès a cette commande").then(m => m.delete(5000))
   bot.salameche = setInterval(spamming, 1000)
   function spamming (){
     if(!args[0]){

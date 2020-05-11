@@ -29,14 +29,6 @@ bot.commands = new Discord.Collection();
 
     bot.on("message", message =>{
         if(message.author.bot) return;
-        if(message.channel.type === "dm") return;
-        if(message.mentions.members.first() === `${bot.user}`) {
-          if(message.author.id === "212238091455299585"){
-            message.channel.send("que puis je fais pour toi ?")
-          }else {
-            message.channel.send("me ping pas ta grand mère !")
-          }
-        } else {
         var prefix = config.prefix;
         var messageArray = message.content.split(" ");
         var command = messageArray[0];
@@ -44,7 +36,6 @@ bot.commands = new Discord.Collection();
         if (message.content.indexOf(prefix) !== 0) return;
         var commands = bot.commands.get(command.slice(prefix.length))
         if(commands) commands.run(bot, message, args);
-        }
     });
- 
-bot.login(process.env.TOKEN);
+
+bot.login(config.token);

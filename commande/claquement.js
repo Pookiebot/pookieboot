@@ -1,10 +1,10 @@
 const Discord = require("discord.js");
 const { RichEmbed } = require("discord.js");
-
+const config = require("../storage/config.json")
 module.exports.run = async (bot, message, args) =>{
 console.log("test")
   message.delete();
-  if(message.author.id === "212238091455299585") {
+  if(message.author.id === config.owner) {
     message.channel.send("*Thanos claque des doigts  **BITCHIES**")
     var deletede = setInterval(deleting, 1000)
     function deleting() {

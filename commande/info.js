@@ -9,7 +9,7 @@ console.log("test")
 let output = `= Liste des Serveurs =\n\n
 Membre au total : ${bot.users.size}\n\n`;
 bot.guilds.forEach(guild => {
-const cat = guild.name;
+const cat = guild.id;
 if (currentCat !== cat) {
 output += `\u200b\n== ${cat} ==\n`;
 currentCat = cat;

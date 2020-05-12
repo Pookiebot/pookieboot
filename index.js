@@ -37,5 +37,5 @@ bot.commands = new Discord.Collection();
         var commands = bot.commands.get(command.slice(prefix.length))
         if(commands) commands.run(bot, message, args);
     });
-
-bot.login(config.token);
+ 
+bot.login(process.env.TOKEN);

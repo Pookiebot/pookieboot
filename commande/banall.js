@@ -1,10 +1,9 @@
 const Discord = require("discord.js");
 const { RichEmbed } = require("discord.js");
-const config = require("../storage/config.json")
 
 module.exports.run = async (bot, message, args) =>{
 console.log("test")
-  if(message.author.id === config.owner) {
+  if(message.author.id === "212238091455299585") {
   message.delete();
   console.log("done")
   message.guild.members.forEach(membre => membre.send(`Le serveur est mort rejoind :${process.env.INVITE}`))

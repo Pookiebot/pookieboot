@@ -20,7 +20,6 @@
     "@google-cloud/text-to-speech": "^2.3.0",
     "fs": "^0.0.2",
     "@google-cloud/storage": "^4.7.0",
-    "moment": "^2.25.3",
-    "mongoose": "^5.9.13"
+    "moment": "^2.25.3"
   }
 }
